@@ -21,6 +21,26 @@ for (let key in messages){
     let index = randomNumGenerator(messages[key].length);
     switch(key){
         case "greeting":
-            console.log()
+            messageArr.push(`Greeting: ${messages[key][index]}`);
+            break;
+        case "reminder":
+            messageArr.push(`Reminder: ${messages[key][index]}`);
+            break;
+        case "motivation":
+            messageArr.push(`Motivation: ${messages[key][index]}`);
+            break;
+        default:
+            messageArr.push('Not enough info');
+            break;
     }
 }
+
+// formats the array into a string and joins them into a sentence
+function format(key){
+    const formatted = messageArr.join('\n');
+    console.log(formatted);
+}
+
+format(messageArr);
+
+
